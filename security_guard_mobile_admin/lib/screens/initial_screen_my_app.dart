@@ -1,3 +1,5 @@
+import 'package:capstone_proj/screens/admin/dashboard_screen.dart';
+import 'package:capstone_proj/screens/admin/user_management.dart';
 import 'package:capstone_proj/screens/register/register.dart';
 import 'package:capstone_proj/screens/navigation_screens/chat.dart';
 import 'package:capstone_proj/screens/navigation_screens/file.dart';
@@ -210,6 +212,43 @@ class _MyAppState extends State<MyApp> {
                   ),
                   // padding: EdgeInsets.all(2),
                 ),
+                const Text('Administration', textAlign: TextAlign.center),
+                const Divider(),
+                ListTile(
+                  title: const Row(
+                    children: [
+                      Icon(Icons.people_outline),
+                      SizedBox(width: 10),
+                      Text('Users Management'),
+                    ],
+                  ),
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) {
+                        return const UserManagementScreen();
+                      }),
+                    );
+                  },
+                ),
+                ListTile(
+                  title: const Row(
+                    children: [
+                      Icon(Icons.person_outline),
+                      SizedBox(width: 10),
+                      Text('Dashboard'),
+                    ],
+                  ),
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) {
+                        return const DashboardScreen();
+                      }),
+                    );
+                  },
+                ),
+                Divider(),
                 const Text('Settings', textAlign: TextAlign.center),
                 const Divider(),
                 ListTile(
