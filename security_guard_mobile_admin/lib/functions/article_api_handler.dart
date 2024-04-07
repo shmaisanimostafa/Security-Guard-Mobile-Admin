@@ -43,4 +43,26 @@ class ArticleAPIHandler {
       throw "Can't post article.";
     }
   }
+
+  Future<void> deleteArticle(int id) async {
+    final response = await http.delete(Uri.parse("$_baseUrl/$id"));
+    if (response.statusCode != 204) {
+      throw "Can't delete article.";
+    }
+  }
+
+  Future<Article> putArticle(int id, Article article) async {
+    final response = await http.put(
+      Uri.parse("$_baseUrl/$id"),
+      headers: <String, String>{
+        'Content-Type': 'application/json; charset=UTF-8',
+      },
+      body: jsonEncode(article.toJson()),
+    );
+    if (response.statusCode >= 200 && response.statusCode <= 299) {
+      return Article.fromJson(jsonDecode(response.body));
+    } else {
+      throw "Can't put article.";
+    }
+  }
 }

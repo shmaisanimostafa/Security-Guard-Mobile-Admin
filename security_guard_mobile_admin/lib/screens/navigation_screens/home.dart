@@ -42,16 +42,14 @@ class _HomeState extends State<Home> {
       padding: const EdgeInsets.all(8.0),
       child: Scaffold(
         floatingActionButton: FloatingActionButton(
-          onPressed: () {
-            Navigator.push(
-              context,
-              MaterialPageRoute(
-                builder: (context) => const AddArticleScreen(),
-              ),
-            );
-          },
-          child: const Icon(Icons.add),
-        ),
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                    builder: (context) => const AddArticleScreen()),
+              );
+            },
+            child: const Icon(Icons.add)),
         body: Center(
             child: ListView(
           children: [

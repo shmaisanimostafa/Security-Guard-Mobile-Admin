@@ -1,5 +1,6 @@
 import 'package:capstone_proj/functions/article_api_handler.dart';
 import 'package:capstone_proj/models/article.dart';
+import 'package:capstone_proj/screens/article/edit_article_screen.dart';
 import 'package:flutter/material.dart';
 
 class ArticleScreen extends StatefulWidget {
@@ -28,6 +29,10 @@ class _ArticleScreenState extends State<ArticleScreen> {
     setState(() {});
   }
 
+  void deleteData() async {
+    await apiHandler.deleteArticle(widget.id);
+  }
+
   @override
   void initState() {
     super.initState();
@@ -50,16 +55,16 @@ class _ArticleScreenState extends State<ArticleScreen> {
               ),
             ),
             const SizedBox(height: 15.0),
-            const Padding(
-              padding: EdgeInsets.only(left: 5.0),
+            Padding(
+              padding: const EdgeInsets.only(left: 5.0),
               child: Row(
                 children: [
-                  CircleAvatar(
+                  const CircleAvatar(
                     radius: 15.0,
                     backgroundImage: AssetImage('images/ProfilePic.png'),
                   ),
-                  SizedBox(width: 5),
-                  Column(
+                  const SizedBox(width: 5),
+                  const Column(
                     mainAxisAlignment: MainAxisAlignment.start,
                     children: [
                       Row(
@@ -76,6 +81,28 @@ class _ArticleScreenState extends State<ArticleScreen> {
                         maxLines: 2,
                       ),
                     ],
+                  ),
+                  IconButton(
+                      onPressed: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) =>
+                                EditArticleScreen(id: widget.id),
+                          ),
+                        );
+                      },
+                      icon: const Icon(Icons.edit)),
+                  IconButton(
+                    onPressed: () {
+                      deleteData();
+                      Navigator.pop(context);
+                    },
+                    icon: const Icon(
+                      Icons.delete,
+                      color: Colors.red,
+                      size: 30,
+                    ),
                   ),
                 ],
               ),
