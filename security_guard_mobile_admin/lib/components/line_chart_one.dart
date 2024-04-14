@@ -1,3 +1,5 @@
+import 'package:capstone_proj/models/app_colors.dart';
+
 import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter/material.dart';
 
@@ -167,11 +169,8 @@ class _LineChart extends StatelessWidget {
   FlBorderData get borderData => FlBorderData(
         show: true,
         border: Border(
-          bottom: BorderSide(
-            color: Colors.amberAccent.withOpacity(0.2),
-            width: 4,
-          ),
-          // Theme.of().primaryColor.withOpacity(0.2), width: 4),
+          bottom:
+              BorderSide(color: AppColors.primary.withOpacity(0.2), width: 4),
           left: const BorderSide(color: Colors.transparent),
           right: const BorderSide(color: Colors.transparent),
           top: const BorderSide(color: Colors.transparent),
@@ -180,7 +179,7 @@ class _LineChart extends StatelessWidget {
 
   LineChartBarData get lineChartBarData1_1 => LineChartBarData(
         isCurved: true,
-        color: Colors.greenAccent,
+        color: AppColors.contentColorGreen,
         barWidth: 8,
         isStrokeCapRound: true,
         dotData: const FlDotData(show: false),
@@ -198,13 +197,13 @@ class _LineChart extends StatelessWidget {
 
   LineChartBarData get lineChartBarData1_2 => LineChartBarData(
         isCurved: true,
-        color: Colors.pinkAccent,
+        color: AppColors.contentColorPink,
         barWidth: 8,
         isStrokeCapRound: true,
         dotData: const FlDotData(show: false),
         belowBarData: BarAreaData(
           show: false,
-          color: Colors.pinkAccent.withOpacity(0),
+          color: AppColors.contentColorPink.withOpacity(0),
         ),
         spots: const [
           FlSpot(1, 1),
@@ -218,7 +217,7 @@ class _LineChart extends StatelessWidget {
 
   LineChartBarData get lineChartBarData1_3 => LineChartBarData(
         isCurved: true,
-        color: Colors.cyanAccent,
+        color: AppColors.contentColorCyan,
         barWidth: 8,
         isStrokeCapRound: true,
         dotData: const FlDotData(show: false),
@@ -235,7 +234,7 @@ class _LineChart extends StatelessWidget {
   LineChartBarData get lineChartBarData2_1 => LineChartBarData(
         isCurved: true,
         curveSmoothness: 0,
-        color: Colors.greenAccent.withOpacity(0.5),
+        color: AppColors.contentColorGreen.withOpacity(0.5),
         barWidth: 4,
         isStrokeCapRound: true,
         dotData: const FlDotData(show: false),
@@ -253,13 +252,13 @@ class _LineChart extends StatelessWidget {
 
   LineChartBarData get lineChartBarData2_2 => LineChartBarData(
         isCurved: true,
-        color: Colors.pinkAccent.withOpacity(0.5),
+        color: AppColors.contentColorPink.withOpacity(0.5),
         barWidth: 4,
         isStrokeCapRound: true,
         dotData: const FlDotData(show: false),
         belowBarData: BarAreaData(
           show: true,
-          color: Colors.pinkAccent.withOpacity(0.2),
+          color: AppColors.contentColorPink.withOpacity(0.2),
         ),
         spots: const [
           FlSpot(1, 1),
@@ -274,7 +273,7 @@ class _LineChart extends StatelessWidget {
   LineChartBarData get lineChartBarData2_3 => LineChartBarData(
         isCurved: true,
         curveSmoothness: 0,
-        color: Colors.cyanAccent.withOpacity(0.5),
+        color: AppColors.contentColorCyan.withOpacity(0.5),
         barWidth: 2,
         isStrokeCapRound: true,
         dotData: const FlDotData(show: true),
@@ -320,8 +319,7 @@ class LineChartSample1State extends State<LineChartSample1> {
               const Text(
                 'Monthly Sales',
                 style: TextStyle(
-                  color: Colors.amberAccent,
-                  // Theme.of(context).primaryColor,
+                  color: AppColors.primary,
                   fontSize: 32,
                   fontWeight: FontWeight.bold,
                   letterSpacing: 2,

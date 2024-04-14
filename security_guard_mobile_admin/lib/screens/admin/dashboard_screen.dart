@@ -1,4 +1,5 @@
 import 'package:capstone_proj/components/line_chart_one.dart';
+import 'package:capstone_proj/components/line_chart_two.dart.dart';
 import 'package:capstone_proj/components/statistics_card.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
@@ -12,10 +13,10 @@ class DashboardScreen extends StatelessWidget {
       appBar: AppBar(
         title: const Text('Dashboard'),
       ),
-      body: const Padding(
-        padding: EdgeInsets.all(8.0),
-        child: Column(
-          children: [
+      body: Padding(
+        padding: const EdgeInsets.all(8.0),
+        child: ListView(
+          children: const [
             Row(
               children: [
                 Expanded(
@@ -49,9 +50,7 @@ class DashboardScreen extends StatelessWidget {
             SizedBox(height: 20),
             Expanded(
               child: Card(
-                child: Center(
-                  child: Text('Piegram'),
-                ),
+                child: Center(child: LineChartSample2()),
               ),
             ),
           ],
