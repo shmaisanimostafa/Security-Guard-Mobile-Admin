@@ -80,7 +80,7 @@ class _HomeState extends State<Home> {
                       title: data[index].title,
                       author: "Mostafa Shmaisani",
                       date: 'Sometime Feb 2023',
-                      imageUrl: 'images/ProfilePic.png',
+                      imageUrl: 'images/img.jpg',
                     ),
                   ],
                 );

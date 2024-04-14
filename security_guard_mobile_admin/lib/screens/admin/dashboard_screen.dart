@@ -1,3 +1,4 @@
+import 'package:capstone_proj/components/statistics_card.dart';
 import 'package:flutter/material.dart';
 
 class DashboardScreen extends StatelessWidget {
@@ -9,31 +10,45 @@ class DashboardScreen extends StatelessWidget {
       appBar: AppBar(
         title: const Text('Dashboard'),
       ),
-      body: const Center(
+      body: const Padding(
+        padding: EdgeInsets.all(8.0),
         child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Text(
-              'Analytics',
-              style: TextStyle(
-                fontSize: 24,
-                fontWeight: FontWeight.bold,
+            Row(
+              children: [
+                Expanded(
+                  child: StatisticsCard(),
+                ),
+                Expanded(
+                  child: StatisticsCard(),
+                ),
+              ],
+            ),
+            Row(
+              children: [
+                Expanded(
+                  child: StatisticsCard(),
+                ),
+                Expanded(
+                  child: StatisticsCard(),
+                ),
+              ],
+            ),
+            SizedBox(height: 20),
+            Expanded(
+              child: Card(
+                child: Center(
+                  child: Text('Analytics Histogram'),
+                ),
               ),
             ),
-            SizedBox(height: 16),
-            Text(
-              'Total Users: 100',
-              style: TextStyle(fontSize: 18),
-            ),
-            SizedBox(height: 8),
-            Text(
-              'Total Sales: \$5000',
-              style: TextStyle(fontSize: 18),
-            ),
-            SizedBox(height: 8),
-            Text(
-              'Conversion Rate: 50%',
-              style: TextStyle(fontSize: 18),
+            SizedBox(height: 20),
+            Expanded(
+              child: Card(
+                child: Center(
+                  child: Text('Piegram'),
+                ),
+              ),
             ),
           ],
         ),

@@ -41,6 +41,7 @@ class _MyAppState extends State<MyApp> {
     const Home(),
     const Link(),
     const UploadFileScreen(),
+    // const DashboardScreen(),
     const Chat(),
   ];
 //
@@ -248,7 +249,7 @@ class _MyAppState extends State<MyApp> {
                     );
                   },
                 ),
-                Divider(),
+                const Divider(),
                 const Text('Settings', textAlign: TextAlign.center),
                 const Divider(),
                 ListTile(
