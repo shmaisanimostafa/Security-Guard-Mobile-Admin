@@ -70,23 +70,28 @@ class _HomeState extends State<Home> {
               child: const Text('Refresh'),
             ),
             //SECTION - List of Articles
-            ListView.builder(
-              itemBuilder: (BuildContext context, int index) {
-                return Column(
-                  children: [
-                    const Divider(),
-                    ArticleCard(
-                      id: data[index].id,
-                      title: data[index].title,
-                      author: "Mostafa Shmaisani",
-                      date: 'Sometime Feb 2023',
-                      imageUrl: 'images/img.jpg',
-                    ),
-                  ],
-                );
+            RefreshIndicator(
+              onRefresh: () async {
+                getData();
               },
-              itemCount: data.length,
-              shrinkWrap: true,
+              child: ListView.builder(
+                itemBuilder: (BuildContext context, int index) {
+                  return Column(
+                    children: [
+                      const Divider(),
+                      ArticleCard(
+                        id: data[index].id,
+                        title: data[index].title,
+                        author: "Mostafa Shmaisani",
+                        date: 'Sometime Feb 2023',
+                        imageUrl: 'images/img.jpg',
+                      ),
+                    ],
+                  );
+                },
+                itemCount: data.length,
+                shrinkWrap: true,
+              ),
             )
           ],
         )),
