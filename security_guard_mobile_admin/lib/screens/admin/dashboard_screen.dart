@@ -1,5 +1,7 @@
+import 'package:capstone_proj/components/line_chart_one.dart';
 import 'package:capstone_proj/components/statistics_card.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 
 class DashboardScreen extends StatelessWidget {
   const DashboardScreen({super.key});
@@ -35,10 +37,12 @@ class DashboardScreen extends StatelessWidget {
               ],
             ),
             SizedBox(height: 20),
-            Expanded(
+            SizedBox(
+              width: 300,
               child: Card(
                 child: Center(
-                  child: Text('Analytics Histogram'),
+                  child: LineChartSample1(),
+                  // Text('Analytics Histogram'),
                 ),
               ),
             ),
